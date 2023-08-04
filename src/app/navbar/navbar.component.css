@@ -1,0 +1,11 @@
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.test{
+    border: 1px solid rgb(47, 203, 241);
+    margin: 0;
+    padding: 0;
+}

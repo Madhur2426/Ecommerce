@@ -1,0 +1,82 @@
+<app-navbar></app-navbar>
+<div class="container py-5">
+    <div class="row justify-content-center mb-3">
+<!--"col-md-12" is a Bootstrap class that sets the column width to occupy the full width of the container on
+   medium-sized screens and above. It means that the column will take up all available space horizontally 
+   on medium-sized screens, while on smaller screens it will behave responsively based on the column structure
+    defined for those screen sizes.
+"col-xl-10" is a Bootstrap class that sets the column width to occupy 10 out of 12 columns on extra-large-
+sized screens and above. It means that the column will take up around 83.33% of the container's width on 
+extra-large-sized screens and above.-->
+      <div class="col-md-12 col-xl-10">
+
+        <!--"card" is a Bootstrap class that represents the card container. It provides a structured 
+          container for displaying content.
+"shadow-0" is a Bootstrap utility class that removes the default box shadow from the card. It creates a 
+card without any shadow effect.
+"border" is a Bootstrap class that adds a border to the card. By default, it adds a 1px solid border 
+around the card.
+"rounded-3" is a Bootstrap utility class that adds rounded corners to the card. The number "3" in the
+ class represents the border radius size, where "3" specifies a medium-rounded border.-->
+        <div class="card shadow-0 border rounded-3">
+
+          <!--style the main content area within a card component. 
+            It provides a container for placing text, images, buttons, and other elements within the card.-->
+          <div class="card-body">
+
+            <!--create a horizontal row and organize the content within it into columns.-->
+            <div class="row">
+
+              
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <button class="test">
+                    <a routerLink="/home">
+                      <img src="assets/back.webp" height="40px" width="40px">
+                    </a>
+                  </button>
+
+                  <img src="{{mobile.picture}}" class="w-100" />
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <h5>{{mobile.model}}</h5>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-1 me-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>               
+                
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  <h4 class="mb-1 me-1">₹{{mobile.price}}</h4>
+                </div>
+                <div class="d-flex flex-column mt-4">
+                  <div (click)="addToCart(mobile)">
+                    <span class="btn btn-primary" *ngIf="!mobile.cartAdded">Add to Cart</span>
+                    <span class="btn btn-success" *ngIf="mobile.cartAdded">Item Added</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container row">
+            <p >
+                {{mobile.info}}
+              </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>

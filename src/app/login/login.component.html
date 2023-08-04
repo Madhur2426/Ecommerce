@@ -1,0 +1,71 @@
+<!--sets the height of an element to 100% of the viewport height. The "vh" stands for "viewport height."
+When you apply the "vh-100" class to an element, it will expand to fill the entire vertical height of the 
+viewport, regardless of the content inside or the height of other elements on the page.-->
+<section class="vh-100">
+
+  <!-- it is used to create a full-width container that spans the entire width of the viewport. 
+    It adjusts its width dynamically based on the device or screen size.-->
+
+    <div class="container-fluid h-custom">
+        <!--col-md-9: This class specifies that the element should occupy 9 out of 12 columns on medium-sized
+          devices (such as tablets) and larger. It sets the width of the element to be 75% of its containing 
+          element's width.
+         col-lg-6: This class specifies that the element should occupy 6 out of 12 columns on large-sized
+          devices (such as laptops) and larger. It sets the width of the element to be 50% of its containing
+           element's width.
+            col-xl-5: This class specifies that the element should occupy 5 out of 12 columns on extra-large-
+            sized devices (such as desktops) and larger. It sets the width of the element to be approximately
+             41.67% of its containing element's width.-->
+      <div class="row d-flex justify-content-center align-items-center h-100">
+      
+         <!-- utility class that ensures the image scales appropriately and maintains its aspect ratio as
+             the viewport size changes. It helps in creating images that are responsive and adapt to different 
+             screen sizes or devices.-->
+            <div class="col-md-9 col-lg-6 col-xl-5">
+         
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+
+        <!--"col-md-8" means that the element will occupy 8 out of 12 columns on medium-sized screens and larger (≥768px).
+"col-lg-6" means that the element will occupy 6 out of 12 columns on large-sized screens and larger (≥992px).
+"col-xl-4" means that the element will occupy 4 out of 12 columns on extra-large-sized screens and larger (≥1200px).
+"offset-xl-1" adds an offset of 1 column to the right on extra-large-sized screens and larger.-->
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                Enter Email<br>
+                <input type="text" id="email" class="form-control form-control-lg" placeholder="Username" formControlName="user" >
+                <span class="warn" *ngIf="user&&user.invalid&&user.touched">This field is required</span>
+                <br><br>
+                 Enter Password <br>
+                <input class="form-control form-control-lg" type="password"  id="password"  placeholder="Password" formControlName="password">
+                <span class="warn" *ngIf="password&&password.invalid&&password.touched">This field is required</span>
+                <br><br>
+                <div class="wrapper">
+                <button [disabled]="loginForm.invalid" class="btn btn-primary" >Login</button>
+                <br>
+                </div>
+                </form><br>
+                <div>
+                    Don't have an account <strong><a routerLink="register">Register</a></strong>
+                  
+                </div>
+        </div>
+        <div *ngIf="Credentials">
+            <div class="alert alert-danger" role="alert">
+               Invalid Credentials
+             </div>
+         </div>
+      </div>
+    </div>
+    <div
+      class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+      <!-- Copyright -->
+      <div class="text-white mb-3 mb-md-0">
+        Copyright © 2023. All rights reserved.
+      </div>
+      <!-- Copyright -->
+  
+      
+    </div>
+  </section>

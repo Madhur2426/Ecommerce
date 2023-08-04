@@ -1,0 +1,60 @@
+<!--create a light-colored navigation bar -->
+<nav class="navbar navbar-light" style="background-color: #07c9c9;">
+  
+  <!--style a branding or logo element within a navbar.-->
+    <a class="navbar-brand">
+      <!-- control the display and vertical alignment of an element.-->
+      <img src="../assets/logo.webp" width="105" height="50" class="d-inline-block align-top" alt="">
+      <h4>Best Deal</h4>
+    </a>
+
+<!--create a light-colored navbar with a light background, and to horizontally align content within the navbar using the 
+  "justify-content-between" class.-->
+    <nav class="navbar navbar-light bg-light justify-content-between">
+
+
+        <form class="move-right d-flex mr-1">
+
+  <!--"form-control" is used to style form input elements, such as text fields, checkboxes, radio buttons, etc.
+   It applies the default Bootstrap styles to make the input elements consistent and visually appealing.
+"me-2" is a utility class for adding margin to the right side of an element. In this case, it would add margin
+ space of 2 units (usually in rems or pixels) to the right of the element.
+"border-success" is a class that applies a success-colored border to an element. It gives a green border color
+ to indicate a successful state.
+"btn-raised" is a class for styling buttons to have a raised or elevated appearance, adding a subtle shadow
+ effect to make them stand out.-->
+            <input   class="test form-control me-2 border-success btn-raised" #model type="search" placeholder="search" aria-label="search">
+             <button (click)="details(model.value)" class="btn  white-border btn-outline-info text-red no-border" type="button">Search</button>   
+           </form>
+      </nav>
+      <button class="test">
+        <a routerLink="/help">
+          <img src="assets/help.webp" alt="" height="60px" width="60px">
+        </a>
+      </button >
+
+<!--"btn" is a Bootstrap class that is used to style buttons. It applies basic button styles, such as padding, 
+  border, and text color.
+"button-image" seems to be a custom class or a class defined in your project's CSS or added by a third-party 
+library. Without further information, it's difficult to determine its exact purpose or styling.
+"btn-outline-info" is a Bootstrap class that creates a button with an outlined border and uses the "info" 
+color variant. The "info" variant typically represents a blue color scheme.
+"no-border" is not a standard Bootstrap class. It might be a custom class defined in your project's CSS or 
+added by a third-party library. Without further information, it's difficult to determine its exact purpose or
+ styling.-->
+      <button class="btn button-image  btn-outline-info no-border">
+        <a routerLink="/ticket">
+          <img src="assets/ticket.jpg" alt="" height="60px" width="60px">
+        </a>
+      </button>
+      <button class="btn button-image  btn-outline-info no-border">
+        <a routerLink="/cart">
+          <img src="assets/cart.png" alt="" height="60px" width="60px">
+        </a>
+      </button>
+      <button class="test">
+        <a routerLink="/login">
+          <img src="assets/logout.webp" alt="" height="60px" width="60px">
+        </a>
+      </button>
+  </nav>
